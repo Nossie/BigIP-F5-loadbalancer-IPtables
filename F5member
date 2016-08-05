@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+#©2016 Nossie
+#
+#Small script to disable and enable BigIp F5 Loadbalancing member
+# usage:
+#10.0.0.1 is an IP for this example, use your own ofcourse.
+#Disable
+# ./F5member A 10.0.0.1 
+#Enable
+# ./F5member D 10.0.0.1
+#
+iptables -$1 INPUT -s $2 -p icmp -j DROP 
